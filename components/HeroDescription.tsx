@@ -13,8 +13,8 @@ const HeroDescription = () => {
         minima!
       </p>
       <div className="flex items-center justify-center gap-4">
-        <PillButton name={"Resume"} foo={undefined} />
-        <PillButton name={"Contact"} foo={undefined} />
+        <PillButton name={"Resume"} />
+        <PillButton name={"Contact"} />
       </div>
     </div>
   );

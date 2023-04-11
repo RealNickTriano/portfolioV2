@@ -1,5 +1,10 @@
 import React from "react";
 
+type ButtonProps = {
+  name: string;
+  foo: (a: any) => void | undefined;
+};
+
 const PillButton = ({ name, foo }) => {
   return (
     <button

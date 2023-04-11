@@ -1,5 +1,10 @@
 import React from "react";
 
+type NavItemProps = {
+  name: string;
+  foo: (a: any) => void | undefined;
+};
+
 const NavItem = ({ name, foo }) => {
   return (
     <button
