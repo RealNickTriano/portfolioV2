@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 /**
  *
@@ -30,7 +31,13 @@ const ProjectItem = ({
       {flipped ? (
         <>
           <div className="flex w-[50%] flex-col items-start justify-center">
-            <div className="flex items-center justify-center gap-1">
+            <motion.div
+              initial={{ x: -200, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", duration: 1 }}
+              className="flex items-center justify-center gap-1"
+            >
               <Link
                 href={appLink}
                 className="text-xl font-medium"
@@ -45,18 +52,36 @@ const ProjectItem = ({
               >
                 - View on Github
               </Link>
-            </div>
-            <h1 className="text-zinc-500">
+            </motion.div>
+            <motion.h1
+              initial={{ x: -200, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", duration: 1, delay: 0.25 }}
+              className="text-zinc-500"
+            >
               {stack.map((item, idx) =>
                 idx !== stack.length - 1 ? item + " | " : item
               )}
-            </h1>
-            <p className="mt-4 whitespace-pre-wrap leading-7">
+            </motion.h1>
+            <motion.p
+              initial={{ scale: 0, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "linear", duration: 0.5, delay: 0.25 }}
+              className="mt-4 whitespace-pre-wrap leading-7"
+            >
               {shortView ? shortDescription : description}
               {shortView && description.length > 350 ? readMoreTag : ""}
-            </p>
+            </motion.p>
           </div>
-          <div className="flex w-[35%] items-center justify-center rounded-md bg-white p-4 shadow-md">
+          <motion.div
+            initial={{ x: 200, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ type: "linear", duration: 0.5, delay: 0.25 }}
+            className="flex w-[35%] items-center justify-center rounded-md bg-white p-4 shadow-md"
+          >
             <Link href={appLink} target="_blank">
               <img
                 src={thumbnail}
@@ -64,11 +89,17 @@ const ProjectItem = ({
                 className="h-full w-full rounded-md"
               />
             </Link>
-          </div>
+          </motion.div>
         </>
       ) : (
         <>
-          <div className="flex w-[35%] items-center justify-center rounded-md bg-white p-4 shadow-md">
+          <motion.div
+            initial={{ x: -200, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ type: "linear", duration: 0.5, delay: 0.25 }}
+            className="flex w-[35%] items-center justify-center rounded-md bg-white p-4 shadow-md"
+          >
             <Link href={appLink} target="_blank">
               <img
                 src={thumbnail}
@@ -76,9 +107,15 @@ const ProjectItem = ({
                 className="h-full w-full rounded-md"
               />
             </Link>
-          </div>
+          </motion.div>
           <div className="flex w-[50%] flex-col items-start justify-center">
-            <div className="flex items-center justify-center gap-1">
+            <motion.div
+              initial={{ x: 200, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", duration: 1 }}
+              className="flex items-center justify-center gap-1"
+            >
               <Link
                 href={appLink}
                 className="text-xl font-medium"
@@ -93,16 +130,28 @@ const ProjectItem = ({
               >
                 - View on Github
               </Link>
-            </div>
-            <h1 className="text-zinc-500">
+            </motion.div>
+            <motion.h1
+              initial={{ x: 200, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", duration: 1, delay: 0.25 }}
+              className="text-zinc-500"
+            >
               {stack.map((item, idx) =>
                 idx !== stack.length - 1 ? item + " | " : item
               )}
-            </h1>
-            <p className="mt-4 whitespace-pre-wrap leading-7">
+            </motion.h1>
+            <motion.p
+              initial={{ scale: 0, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "linear", duration: 0.5, delay: 0.25 }}
+              className="mt-4 whitespace-pre-wrap leading-7"
+            >
               {shortView ? shortDescription : description}
               {shortView && description.length > 350 ? readMoreTag : ""}
-            </p>
+            </motion.p>
           </div>
         </>
       )}

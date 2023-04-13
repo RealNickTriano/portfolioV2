@@ -1,4 +1,5 @@
 import { useState } from "react";
+import AlertMessage from "./AlertMessage";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +10,8 @@ const ContactForm = () => {
   });
 
   const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const handleChange = (event) => {
     if (event.target.name === "email") {
@@ -55,11 +58,17 @@ const ContactForm = () => {
       body: JSON.stringify(formData),
     });
     if (response.status === 200) {
-      alert("Email sent successfully!");
       setIsLoading(false);
+      setIsSuccess(true);
+      setTimeout(() => {
+        setIsSuccess(false);
+      }, 2000);
     } else {
       setIsLoading(false);
-      alert("Error sending email");
+      setIsError(true);
+      setTimeout(() => {
+        setIsError(false);
+      }, 2000);
     }
   };
 
@@ -90,7 +99,7 @@ const ContactForm = () => {
           </div>
 
           <div className="flex w-full flex-col items-start justify-center gap-1 font-medium">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Your Email</label>
             <input
               required
               type="text"
@@ -144,6 +153,15 @@ const ContactForm = () => {
       >
         {isLoading ? "Loading..." : "Send Message"}
       </button>
+      {isSuccess && (
+        <AlertMessage success={true} message={"Email Sent Successfully"} />
+      )}
+      {isError && (
+        <AlertMessage
+          success={false}
+          message={"Something went wrong! Check fields and try again."}
+        />
+      )}
     </form>
   );
 };

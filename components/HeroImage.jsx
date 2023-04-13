@@ -1,8 +1,14 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const HeroImage = () => {
   return (
-    <div className="flex h-[30%] w-[30%] items-center justify-center rounded-lg p-4 shadow-md shadow-blue-200">
+    <motion.div
+      initial={{ y: -200, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ type: "spring", duration: 1 }}
+      className="flex h-[30%] w-[30%] items-center justify-center rounded-lg p-4 shadow-md shadow-blue-200"
+    >
       <Image
         src="/profile.jpg"
         alt="profile_picture_of_me"
@@ -10,7 +16,7 @@ const HeroImage = () => {
         height={328}
         className="h-full w-full rounded-md"
       ></Image>
-    </div>
+    </motion.div>
   );
 };
 

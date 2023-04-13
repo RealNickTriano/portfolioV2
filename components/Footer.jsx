@@ -9,17 +9,26 @@ const Footer = () => {
             <Link
               href={"https://www.linkedin.com/in/nicholastriano/"}
               target="_blank"
+              className="hover:text-blue-500"
             >
               LinkedIn
             </Link>
           </li>
           <li>
-            <Link href={"https://github.com/RealNickTriano"} target="_blank">
+            <Link
+              href={"https://github.com/RealNickTriano"}
+              target="_blank"
+              className="hover:text-blue-500"
+            >
               Github
             </Link>
           </li>
           <li>
-            <Link href={"https://twitter.com/nKoalaBear"} target="_blank">
+            <Link
+              href={"https://twitter.com/nKoalaBear"}
+              target="_blank"
+              className="hover:text-blue-500"
+            >
               Twitter
             </Link>
           </li>
