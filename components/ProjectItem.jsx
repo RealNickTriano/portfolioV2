@@ -24,7 +24,7 @@ const ProjectItem = ({
       Read More
     </Link>
   );
-  console.log(shortDescription);
+
   return (
     <div className="flex w-full items-center justify-around">
       {flipped ? (
