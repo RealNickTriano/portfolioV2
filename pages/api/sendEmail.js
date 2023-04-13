@@ -6,12 +6,12 @@ export default async function handler(req, res) {
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
     const msg = {
-      from: `${name} <${email}>`,
+      from: `${process.env.YOUR_EMAIL_ADDRESS}`,
       to: process.env.YOUR_EMAIL_ADDRESS,
       subject: subject
-        ? `${subject}`
+        ? `Potential Client: ${subject}`
         : `New contact form submission from ${name}`,
-      text: message,
+      text: email + "\n" + message,
     };
 
     try {
