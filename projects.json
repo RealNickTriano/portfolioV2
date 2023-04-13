@@ -1,0 +1,46 @@
+{
+  "projects": [
+    {
+      "title": "Wordle-mon",
+      "stack": ["React", "TailwindCSS", "Node.js", "Express", "MongoDB"],
+      "description": "A wordle inspired site where users have to guess a random pokemon. Pokemon names are fecthed from an api on the backend and randomly selected into a database. When the user loads the site the correct name is fetched from the database. Manages users' local storage for game state and statistics. Uses twitter intents to share completion of today's wordle-mon and displays a timer to show when the reset occurs. User is able to change to dark mode and it is fully functional on mobile view.",
+      "link": "https://wordle-mon.herokuapp.com/",
+      "github": "https://github.com/RealNickTriano/wordle-clone",
+      "thumbnail": "imgLink"
+    },
+    {
+      "title": "Project Manager",
+      "stack": ["Angular", "TailwindCSS", "Firebase"],
+      "description": "Built with Angular, Tailwind CSS, utilizing json-server for an in-memory database and simulated REST API, and authenticated users with Firebase auth. Leveraged Angular CLI to create components, services, and build for production. Created user-friendly interfaces that incorporate template driven forms and component driven architecture for a streamlined user experience. Login in to create and manage your projects. Set tasks and organize them by priority, customized labels, and completion status.",
+      "link": "https://project-manager-angular.herokuapp.com/",
+      "github": "https://github.com/RealNickTriano/task-tracker-angular",
+      "thumbnail": "imgLink"
+    },
+    {
+      "title": "TemTem Viewer",
+      "stack": ["React", "TailwindCSS", "Node.js", "Express", "MongoDB"],
+      "description": "View all temtem in the game and guess the daily temtem. See the 3d renders, stats, evolutions, and shinies of each temtem. Post to the discussion board about the temtem of the day and like or dislike others comments. Daily temtem changes every day. This was a challenging app to build as it was my first time using somone else's api. The api was incomplete which is why you see some missing renders. But it was a great learning experience. Used an open source API to display the characters in 3D with stat cards and custom pagination. Developed a custom API to change the daily character that users can guess and comment about. Corrected code for an open source API that mishandled information.",
+      "link": "https://temtem-viewer.herokuapp.com/",
+      "github": "https://github.com/RealNickTriano/temtem-viewer",
+      "thumbnail": "imgLink"
+    },
+    {
+      "title": "Pizza Store App",
+      "stack": ["Java", "JavaFX", "Android Studio"],
+      "description": "Using Android Studio I created an app for a pizza store to manage orders. This app was ported from a JavaFX application. The functionality includes placing and removing orders, calculating order cost, and visualizing store orders using a RecyclerView. Design patterns used for this app were Model View Controller (MVC) and Abstract Factory.",
+      "link": "#",
+      "github": "https://github.com/RealNickTriano/Software-Methodology/tree/main/PizzaAppAndroid",
+      "thumbnail": ""
+    }
+  ],
+  "work": [
+    {
+      "title": "Smoothie Shop",
+      "stack": ["React", "TailwindCSS", "Figma"],
+      "description": "A Landing page for a smoothie shop. 🥤\nCreated with React and Tailwind using a community design from Figma.",
+      "link": "https://smoothiesshop.netlify.app/",
+      "github": "https://github.com/RealNickTriano/smoothies-landing",
+      "thumbnail": "imgLink"
+    }
+  ]
+}
