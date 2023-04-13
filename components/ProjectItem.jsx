@@ -13,6 +13,16 @@ const ProjectItem = ({
   gitLink,
   shortView,
 }) => {
+  const shortDescription =
+    description.substring(0, 350) + (description.length > 350 ? "..." : "");
+
+  const readMoreTag = (
+    <a href="/work" className="font-medium text-blue-500">
+      {" "}
+      Read More
+    </a>
+  );
+  console.log(shortDescription);
   return (
     <div className="flex w-full items-center justify-around">
       {flipped ? (
@@ -32,21 +42,8 @@ const ProjectItem = ({
               )}
             </h1>
             <p className="mt-4 whitespace-pre-wrap leading-7">
-              {shortView ? (
-                description.substring(0, 350) +
-                  (description.length > 350 ? "..." : "") +
-                  description.length >
-                350 ? (
-                  <a href="#" className="font-medium text-blue-500">
-                    {" "}
-                    Read More
-                  </a>
-                ) : (
-                  ""
-                )
-              ) : (
-                description
-              )}
+              {shortView ? shortDescription : description}
+              {shortView && description.length > 350 ? readMoreTag : ""}
             </p>
           </div>
           <div className="flex w-[35%] items-center justify-center rounded-md bg-white p-4 shadow-md">
@@ -81,21 +78,8 @@ const ProjectItem = ({
               )}
             </h1>
             <p className="mt-4 whitespace-pre-wrap leading-7">
-              {shortView ? (
-                description.substring(0, 350) +
-                  (description.length > 350 ? "..." : "") +
-                  description.length >
-                350 ? (
-                  <a href="#" className="font-medium text-blue-500">
-                    {" "}
-                    Read More
-                  </a>
-                ) : (
-                  ""
-                )
-              ) : (
-                description
-              )}
+              {shortView ? shortDescription : description}
+              {shortView && description.length > 350 ? readMoreTag : ""}
             </p>
           </div>
         </>
