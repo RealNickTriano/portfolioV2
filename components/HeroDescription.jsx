@@ -1,4 +1,5 @@
 import PillButton from "./PillButton";
+import Link from "next/link";
 
 const HeroDescription = () => {
   return (
@@ -11,8 +12,15 @@ const HeroDescription = () => {
         difference of tailored web solutions designed to grow your business.
       </p>
       <div className="flex items-center justify-center gap-4">
-        <PillButton name={"Resume"} />
-        <PillButton name={"Contact"} />
+        <Link
+          className="rounded-full border-2 border-gray-400 px-8 py-2 capitalize shadow-md transition hover:border-blue-400"
+          href="/Nick_Triano_Resume2.pdf"
+          target="_blank"
+          scroll={false}
+        >
+          Resume
+        </Link>
+        <PillButton name={"Contact"} myRef={"#contact-form"} />
       </div>
     </div>
   );

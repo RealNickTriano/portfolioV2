@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { sendContactForm } from "../lib/api.js";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -47,7 +46,14 @@ const ContactForm = () => {
     }
 
     setIsLoading(true);
-    const response = await sendContactForm(formData);
+    console.log(formData);
+    const response = await fetch("/api/sendEmail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
     if (response.status === 200) {
       alert("Email sent successfully!");
       setIsLoading(false);
@@ -61,6 +67,7 @@ const ContactForm = () => {
     <form
       onSubmit={handleSubmit}
       className="flex w-full flex-col items-center justify-center gap-8"
+      id="contact-form"
     >
       <div className="flex w-full items-center justify-center gap-4">
         <div className="flex w-[50%] flex-col items-center justify-center gap-6 ">
