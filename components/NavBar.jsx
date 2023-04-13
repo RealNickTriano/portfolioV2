@@ -6,7 +6,7 @@ const NavBar = () => {
   const navItems = [
     { name: "Home", link: "home" },
     { name: "Work", link: "work" },
-    { name: "Contact", link: "contact" },
+    { name: "Contact", link: "home/#contact-form" },
   ];
 
   return (

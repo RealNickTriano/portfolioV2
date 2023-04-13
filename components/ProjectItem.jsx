@@ -57,21 +57,25 @@ const ProjectItem = ({
             </p>
           </div>
           <div className="flex w-[35%] items-center justify-center rounded-md bg-white p-4 shadow-md">
-            <img
-              src={thumbnail}
-              alt="project_thumbnail"
-              className="h-full w-full rounded-md"
-            />
+            <Link href={appLink} target="_blank">
+              <img
+                src={thumbnail}
+                alt="project_thumbnail"
+                className="h-full w-full rounded-md"
+              />
+            </Link>
           </div>
         </>
       ) : (
         <>
           <div className="flex w-[35%] items-center justify-center rounded-md bg-white p-4 shadow-md">
-            <img
-              src={thumbnail}
-              alt="project_thumbnail"
-              className="h-full w-full rounded-md"
-            />
+            <Link href={appLink} target="_blank">
+              <img
+                src={thumbnail}
+                alt="project_thumbnail"
+                className="h-full w-full rounded-md"
+              />
+            </Link>
           </div>
           <div className="flex w-[50%] flex-col items-start justify-center">
             <div className="flex items-center justify-center gap-1">
