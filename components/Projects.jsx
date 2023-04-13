@@ -1,5 +1,6 @@
 import ProjectItem from "./ProjectItem";
 import MyProjs from "../projects.json";
+import Link from "next/link";
 
 const Projects = ({ shortView }) => {
   return (
@@ -43,12 +44,12 @@ const Projects = ({ shortView }) => {
               );
             })}
         {shortView && (
-          <a
-            href=""
+          <Link
+            href="/work"
             className="text-xl font-normal text-zinc-500 hover:text-blue-500"
           >
             View All
-          </a>
+          </Link>
         )}
       </div>
     </div>

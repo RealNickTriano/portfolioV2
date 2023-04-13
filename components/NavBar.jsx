@@ -6,7 +6,6 @@ const NavBar = () => {
   const navItems = [
     { name: "Home", link: "home" },
     { name: "Work", link: "work" },
-    { name: "Resume", link: "resume" },
     { name: "Contact", link: "contact" },
   ];
 

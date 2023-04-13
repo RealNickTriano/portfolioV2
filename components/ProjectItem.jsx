@@ -31,10 +31,18 @@ const ProjectItem = ({
         <>
           <div className="flex w-[50%] flex-col items-start justify-center">
             <div className="flex items-center justify-center gap-1">
-              <Link href={appLink} className="text-xl font-medium">
+              <Link
+                href={appLink}
+                className="text-xl font-medium"
+                target="_blank"
+              >
                 {title}
               </Link>
-              <Link href={gitLink} className="font-medium text-blue-500">
+              <Link
+                href={gitLink}
+                className="font-medium text-blue-500"
+                target="_blank"
+              >
                 - View on Github
               </Link>
             </div>
@@ -50,7 +58,7 @@ const ProjectItem = ({
           </div>
           <div className="flex w-[35%] items-center justify-center rounded-md bg-white p-4 shadow-md">
             <img
-              src="/wordlemon.png"
+              src={thumbnail}
               alt="project_thumbnail"
               className="h-full w-full rounded-md"
             />
@@ -60,17 +68,25 @@ const ProjectItem = ({
         <>
           <div className="flex w-[35%] items-center justify-center rounded-md bg-white p-4 shadow-md">
             <img
-              src="/wordlemon.png"
+              src={thumbnail}
               alt="project_thumbnail"
               className="h-full w-full rounded-md"
             />
           </div>
           <div className="flex w-[50%] flex-col items-start justify-center">
             <div className="flex items-center justify-center gap-1">
-              <Link href={appLink} className="text-xl font-medium">
+              <Link
+                href={appLink}
+                className="text-xl font-medium"
+                target="_blank"
+              >
                 {title}
               </Link>
-              <Link href={gitLink} className="font-medium text-blue-500">
+              <Link
+                href={gitLink}
+                className="font-medium text-blue-500"
+                target="_blank"
+              >
                 - View on Github
               </Link>
             </div>
