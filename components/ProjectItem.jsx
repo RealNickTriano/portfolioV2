@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 /**
  *
  * TODOS:
@@ -17,10 +19,10 @@ const ProjectItem = ({
     description.substring(0, 350) + (description.length > 350 ? "..." : "");
 
   const readMoreTag = (
-    <a href="/work" className="font-medium text-blue-500">
+    <Link href="/work" className="font-medium text-blue-500">
       {" "}
       Read More
-    </a>
+    </Link>
   );
   console.log(shortDescription);
   return (
@@ -29,12 +31,12 @@ const ProjectItem = ({
         <>
           <div className="flex w-[50%] flex-col items-start justify-center">
             <div className="flex items-center justify-center gap-1">
-              <a href={appLink} className="text-xl font-medium">
+              <Link href={appLink} className="text-xl font-medium">
                 {title}
-              </a>
-              <a href={gitLink} className="font-medium text-blue-500">
+              </Link>
+              <Link href={gitLink} className="font-medium text-blue-500">
                 - View on Github
-              </a>
+              </Link>
             </div>
             <h1 className="text-zinc-500">
               {stack.map((item, idx) =>
@@ -65,12 +67,12 @@ const ProjectItem = ({
           </div>
           <div className="flex w-[50%] flex-col items-start justify-center">
             <div className="flex items-center justify-center gap-1">
-              <a href={appLink} className="text-xl font-medium">
+              <Link href={appLink} className="text-xl font-medium">
                 {title}
-              </a>
-              <a href={gitLink} className="font-medium text-blue-500">
+              </Link>
+              <Link href={gitLink} className="font-medium text-blue-500">
                 - View on Github
-              </a>
+              </Link>
             </div>
             <h1 className="text-zinc-500">
               {stack.map((item, idx) =>
