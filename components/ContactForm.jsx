@@ -40,18 +40,6 @@ const ContactForm = () => {
     return re.test(email);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    if (!validateEmail(formData.email)) {
-      return false;
-    }
-
-    setIsLoading(true);
-
-    recaptchaRef.current.execute();
-  };
-
   const sendForm = async () => {
     const response = await fetch("/api/sendEmail", {
       method: "POST",
@@ -75,21 +63,34 @@ const ContactForm = () => {
     }
   };
 
-  const recaptchaRef = createRef();
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-  const onReCAPTCHAChange = (captchaCode) => {
-    // If the reCAPTCHA code is null or undefined indicating that
-    // the reCAPTCHA was expired then return early
-    if (!captchaCode) {
-      return;
+    if (!validateEmail(formData.email)) {
+      return false;
     }
-    // Else reCAPTCHA was executed successfully so proceed with the
-    // alert
+
+    setIsLoading(true);
+
+    // recaptchaRef.current.execute();
     sendForm();
-    // Reset the reCAPTCHA so that it can be executed again if user
-    // submits another email.
-    recaptchaRef.current.reset();
   };
+
+  // const recaptchaRef = createRef();
+
+  // const onReCAPTCHAChange = (captchaCode) => {
+  //   // If the reCAPTCHA code is null or undefined indicating that
+  //   // the reCAPTCHA was expired then return early
+  //   if (!captchaCode) {
+  //     return;
+  //   }
+  //   // Else reCAPTCHA was executed successfully so proceed with the
+  //   // alert
+  //   sendForm();
+  //   // Reset the reCAPTCHA so that it can be executed again if user
+  //   // submits another email.
+  //   recaptchaRef.current.reset();
+  // };
 
   return (
     <form
@@ -97,12 +98,12 @@ const ContactForm = () => {
       className="flex w-full flex-col items-center justify-center gap-8 px-12"
       id="contact-form"
     >
-      <ReCAPTCHA
+      {/* <ReCAPTCHA
         ref={recaptchaRef}
         size="invisible"
         sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
         onChange={onReCAPTCHAChange}
-      />
+      /> */}
       <div className="flex w-full flex-col items-center justify-center gap-4 lg:flex-row">
         <div className="flex w-full flex-col items-center justify-center gap-6">
           <div className="flex w-full flex-col items-start justify-center gap-1 font-medium">
