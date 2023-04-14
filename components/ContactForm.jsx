@@ -75,11 +75,11 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex w-full flex-col items-center justify-center gap-8"
+      className="flex w-full flex-col items-center justify-center gap-8 px-12"
       id="contact-form"
     >
-      <div className="flex w-full items-center justify-center gap-4">
-        <div className="flex w-[50%] flex-col items-center justify-center gap-6 ">
+      <div className="flex w-full flex-col items-center justify-center gap-4">
+        <div className="flex w-full flex-col items-center justify-center gap-6 ">
           <div className="flex w-full flex-col items-start justify-center gap-1 font-medium">
             <label htmlFor="name">Full Name</label>
             <input
@@ -129,7 +129,7 @@ const ContactForm = () => {
             />
           </div>
         </div>
-        <div className="flex w-[50%] items-center justify-center">
+        <div className="flex w-full items-center justify-center">
           <textarea
             required
             name="message"

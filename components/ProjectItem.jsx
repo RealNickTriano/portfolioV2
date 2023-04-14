@@ -27,10 +27,10 @@ const ProjectItem = ({
   );
 
   return (
-    <div className="flex w-full items-center justify-around">
+    <div className="flex w-full flex-col items-center justify-center gap-4 text-center">
       {flipped ? (
-        <>
-          <div className="flex w-[50%] flex-col items-start justify-center">
+        <div className="flex flex-col-reverse items-center justify-center gap-4">
+          <div className="flex w-full flex-col items-center justify-center gap-2">
             <motion.div
               initial={{ x: -200, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -69,7 +69,7 @@ const ProjectItem = ({
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ type: "linear", duration: 0.5, delay: 0.25 }}
-              className="mt-4 whitespace-pre-wrap leading-7"
+              className="mt-4 whitespace-pre-wrap text-center leading-7"
             >
               {shortView ? shortDescription : description}
               {shortView && description.length > 350 ? readMoreTag : ""}
@@ -80,7 +80,7 @@ const ProjectItem = ({
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ type: "linear", duration: 0.5, delay: 0.25 }}
-            className="flex w-[35%] items-center justify-center rounded-md bg-white p-4 shadow-md"
+            className="flex w-full items-center justify-center rounded-md bg-white p-4 shadow-md"
           >
             <Link href={appLink} target="_blank">
               <img
@@ -90,7 +90,7 @@ const ProjectItem = ({
               />
             </Link>
           </motion.div>
-        </>
+        </div>
       ) : (
         <>
           <motion.div
@@ -98,7 +98,7 @@ const ProjectItem = ({
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ type: "linear", duration: 0.5, delay: 0.25 }}
-            className="flex w-[35%] items-center justify-center rounded-md bg-white p-4 shadow-md"
+            className="flex w-full items-center justify-center rounded-md bg-white p-4 shadow-md"
           >
             <Link href={appLink} target="_blank">
               <img
@@ -108,7 +108,7 @@ const ProjectItem = ({
               />
             </Link>
           </motion.div>
-          <div className="flex w-[50%] flex-col items-start justify-center">
+          <div className="flex w-full flex-col items-center justify-center gap-2 text-center">
             <motion.div
               initial={{ x: 200, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -147,7 +147,7 @@ const ProjectItem = ({
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ type: "linear", duration: 0.5, delay: 0.25 }}
-              className="mt-4 whitespace-pre-wrap leading-7"
+              className="mt-4 whitespace-pre-wrap text-center leading-7"
             >
               {shortView ? shortDescription : description}
               {shortView && description.length > 350 ? readMoreTag : ""}

@@ -10,10 +10,10 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="flex w-full items-center justify-center px-12 py-16">
+    <nav className="flex w-full items-center justify-center px-12 pt-16">
       <ul className="flex w-full max-w-[1200px] items-center justify-between">
         <HomeLogo />
-        <div className="flex items-center justify-center gap-12">
+        <div className="hidden items-center justify-center gap-12">
           {navItems.map((item, idx) => {
             return (
               <li key={item.name}>
