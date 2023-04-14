@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, createRef } from "react";
 import AlertMessage from "./AlertMessage";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -39,17 +40,19 @@ const ContactForm = () => {
     return re.test(email);
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log(formData);
-    console.log(event);
     if (!validateEmail(formData.email)) {
       return false;
     }
 
     setIsLoading(true);
-    console.log(formData);
+
+    recaptchaRef.current.execute();
+  };
+
+  const sendForm = async () => {
     const response = await fetch("/api/sendEmail", {
       method: "POST",
       headers: {
@@ -72,12 +75,34 @@ const ContactForm = () => {
     }
   };
 
+  const recaptchaRef = createRef();
+
+  const onReCAPTCHAChange = (captchaCode) => {
+    // If the reCAPTCHA code is null or undefined indicating that
+    // the reCAPTCHA was expired then return early
+    if (!captchaCode) {
+      return;
+    }
+    // Else reCAPTCHA was executed successfully so proceed with the
+    // alert
+    sendForm();
+    // Reset the reCAPTCHA so that it can be executed again if user
+    // submits another email.
+    recaptchaRef.current.reset();
+  };
+
   return (
     <form
       onSubmit={handleSubmit}
       className="flex w-full flex-col items-center justify-center gap-8 px-12"
       id="contact-form"
     >
+      <ReCAPTCHA
+        ref={recaptchaRef}
+        size="invisible"
+        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+        onChange={onReCAPTCHAChange}
+      />
       <div className="flex w-full flex-col items-center justify-center gap-4 lg:flex-row">
         <div className="flex w-full flex-col items-center justify-center gap-6">
           <div className="flex w-full flex-col items-start justify-center gap-1 font-medium">
