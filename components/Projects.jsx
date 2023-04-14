@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Projects = ({ shortView }) => {
   return (
-    <div className="w-full max-w-[1200px] pb-12">
+    <div className="w-full max-w-[1200px] overflow-x-hidden pb-12">
       <div className="flex flex-col items-center justify-center gap-2">
         <h1 className="text-3xl font-medium">Work</h1>
         <div className="relative h-[2px] w-[107px] bg-gray-300">

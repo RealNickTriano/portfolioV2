@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   const [showMenu, setShowMenu] = useState(true);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start pt-12">
+    <main className="flex min-h-screen flex-col items-center justify-start overflow-x-hidden pt-12">
       <div className="flex w-full flex-col items-center justify-center gap-12 px-12 pb-12">
         <HeroImage />
         <HeroDescription />
