@@ -78,8 +78,8 @@ const ContactForm = () => {
       className="flex w-full flex-col items-center justify-center gap-8 px-12"
       id="contact-form"
     >
-      <div className="flex w-full flex-col items-center justify-center gap-4">
-        <div className="flex w-full flex-col items-center justify-center gap-6 ">
+      <div className="flex w-full flex-col items-center justify-center gap-4 lg:flex-row">
+        <div className="flex w-full flex-col items-center justify-center gap-6">
           <div className="flex w-full flex-col items-start justify-center gap-1 font-medium">
             <label htmlFor="name">Full Name</label>
             <input

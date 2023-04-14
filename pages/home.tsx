@@ -14,15 +14,15 @@ export default function Home() {
   const [showMenu, setShowMenu] = useState(true);
   return (
     <main className="flex min-h-screen flex-col items-center justify-start overflow-x-hidden pt-12">
-      <div className="flex w-full flex-col items-center justify-center gap-12 px-12 pb-12">
+      <div className="flex w-full max-w-[1200px] flex-col items-center justify-center gap-12 px-12 pb-12 md:flex-row lg:px-12 lg:pb-64 lg:pt-24">
         <HeroImage />
         <HeroDescription />
       </div>
-      <div className="flex w-full flex-col items-center justify-center bg-neutral-100 px-12 py-12">
+      <div className="flex w-full flex-col items-center justify-center bg-neutral-100 px-12">
         <Projects shortView={true} />
       </div>
       <div className="flex w-full max-w-[1200px] flex-col items-center justify-center bg-neutral-50 py-12">
-        <div className="mb-8 flex w-full flex-col items-center justify-center gap-1">
+        <div className="mb-8 flex w-full flex-col items-center justify-center gap-1 px-12 lg:items-start">
           <h1 className="text-center text-2xl font-medium">
             How Can I Help You?
           </h1>

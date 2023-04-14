@@ -16,22 +16,26 @@ const ProjectItem = ({
   appLink,
   gitLink,
   shortView,
+  id,
 }) => {
   const shortDescription =
     description.substring(0, 350) + (description.length > 350 ? "..." : "");
 
   const readMoreTag = (
-    <Link href="/work" className="font-medium text-blue-500">
+    <Link href={`/work#${id}`} className="font-medium text-blue-500">
       {" "}
       Read More
     </Link>
   );
 
   return (
-    <div className="flex w-full flex-col items-center justify-center gap-4 text-center">
+    <div
+      id={id}
+      className="flex w-full flex-col items-center justify-center gap-4 text-center"
+    >
       {flipped ? (
-        <div className="flex flex-col-reverse items-center justify-center gap-4">
-          <div className="flex w-full flex-col items-center justify-center gap-2">
+        <div className="flex flex-col-reverse items-center justify-center gap-4 lg:flex-row lg:gap-12">
+          <div className="flex w-full flex-col items-center justify-center gap-2 lg:w-[50%] lg:items-start">
             <motion.div
               initial={{ x: -200, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -70,7 +74,7 @@ const ProjectItem = ({
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ type: "linear", duration: 0.5, delay: 0.25 }}
-              className="mt-4 whitespace-pre-wrap text-center leading-7"
+              className="mt-4 whitespace-pre-wrap text-center leading-7 lg:text-left"
             >
               {shortView ? shortDescription : description}
               {shortView && description.length > 350 ? readMoreTag : ""}
@@ -81,7 +85,7 @@ const ProjectItem = ({
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ type: "linear", duration: 0.5, delay: 0.25 }}
-            className="flex w-full items-center justify-center rounded-md bg-white p-4 shadow-md"
+            className="flex w-full items-center justify-center rounded-md bg-white p-4 shadow-md lg:w-[30%]"
           >
             <Link href={appLink} target="_blank">
               <img
@@ -93,13 +97,13 @@ const ProjectItem = ({
           </motion.div>
         </div>
       ) : (
-        <>
+        <div className="flex flex-col items-center justify-center gap-4 lg:flex-row lg:gap-12">
           <motion.div
             initial={{ x: -200, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ type: "linear", duration: 0.5, delay: 0.25 }}
-            className="flex w-full items-center justify-center rounded-md bg-white p-4 shadow-md"
+            className="flex w-full items-center justify-center rounded-md bg-white p-4 shadow-md lg:w-[30%]"
           >
             <Link href={appLink} target="_blank">
               <img
@@ -109,7 +113,7 @@ const ProjectItem = ({
               />
             </Link>
           </motion.div>
-          <div className="flex w-full flex-col items-center justify-center gap-2 text-center">
+          <div className="flex w-full flex-col items-center justify-center gap-2 text-center lg:w-[50%] lg:items-start">
             <motion.div
               initial={{ x: 200, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -148,13 +152,13 @@ const ProjectItem = ({
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ type: "linear", duration: 0.5, delay: 0.25 }}
-              className="mt-4 whitespace-pre-wrap text-center leading-7"
+              className="mt-4 whitespace-pre-wrap text-center leading-7 lg:text-left"
             >
               {shortView ? shortDescription : description}
               {shortView && description.length > 350 ? readMoreTag : ""}
             </motion.p>
           </div>
-        </>
+        </div>
       )}
     </div>
   );

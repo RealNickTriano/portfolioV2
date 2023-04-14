@@ -25,7 +25,7 @@ const HeroDescription = () => {
         initial={{ x: 200, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ type: "spring", duration: 1, delay: 0.5 }}
-        className="text-md text-center leading-7 text-zinc-500"
+        className="text-md text-center leading-7 text-zinc-500 lg:max-w-[420px]"
       >
         Unlock the potential of your online presence with a Rutgers Computer
         Science graduate, offering full-stack expertise. Experience the
