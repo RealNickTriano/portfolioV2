@@ -23,15 +23,6 @@ const Footer = () => {
               Github
             </Link>
           </li>
-          <li>
-            <Link
-              href={"https://twitter.com/nKoalaBear"}
-              target="_blank"
-              className="hover:text-blue-500"
-            >
-              Twitter
-            </Link>
-          </li>
         </ul>
         <p>
           &copy; {new Date().getFullYear()} All rights reserved. Nicholas

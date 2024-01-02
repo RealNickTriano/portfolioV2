@@ -7,8 +7,7 @@ import { motion } from "framer-motion";
 const NavBar = () => {
   const navItems = [
     { name: "Home", link: "home" },
-    { name: "Work", link: "work" },
-    { name: "Contact", link: "home/#contact-form" },
+    { name: "Work", link: "work" }
   ];
 
   return (
@@ -40,20 +39,6 @@ const NavBar = () => {
             <Image
               src="/icons8-linkedin.svg"
               alt="linkedin_icon"
-              width={48}
-              height={48}
-            />
-          </motion.a>
-          <motion.a
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ type: "spring", duration: 0.5, delay: 1.75 }}
-            href="https://twitter.com/nKoalaBear"
-            target="_blank"
-          >
-            <Image
-              src="/icons8-twitter.svg"
-              alt="twitter_icon"
               width={48}
               height={48}
             />
