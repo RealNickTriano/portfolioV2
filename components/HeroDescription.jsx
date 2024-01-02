@@ -46,12 +46,18 @@ const HeroDescription = () => {
             Resume
           </Link>
         </motion.div>
-        <p className="flex gap-1">Email:
+        <motion.p
+          initial={{ y: 200, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ type: "spring", duration: 1, delay: 0.75 }}
+          className="flex gap-1"
+        >
+          Email:
           <a className="font-semibold text-blue-500"
               href="mailto:nicholastriano1999@gmail.com">
                 nicholastriano1999@gmail.com
           </a>
-        </p>
+        </motion.p>
       </div>
     </div>
   );
