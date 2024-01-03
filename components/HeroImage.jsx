@@ -10,7 +10,7 @@ const HeroImage = () => {
       className="flex w-full max-w-[400px] items-center justify-center rounded-lg p-4 shadow-md shadow-blue-200"
     >
       <Image
-        src="/profile.jpg"
+        src="/profile_pic.jpg"
         alt="profile_picture_of_me"
         width={328}
         height={328}
